@@ -31,9 +31,18 @@
       '<div class="tarjeta__cuerpo"><span class="tarjeta__titulo">' + E.escapar(e.nombre) + '</span>' + descripcion + '</div></a>';
   }
 
+  // Imagen original del artículo (recuperada del archivo web); si no hay, la portada por defecto.
+  function portadaEntrada(p) {
+    if (p.imagen) return E.imagen(p.imagen, '');
+    var lima = E.normalizar(p.categoria) === 'marketing';
+    return '<div class="portada-blog' + (lima ? ' portada-blog--lima' : '') + '">' +
+      '<img src="assets/logos/estacion-horizontal-' + (lima ? 'azul' : 'blanco') + '.png" alt="">' +
+      '<span>' + E.escapar(p.categoria) + '</span></div>';
+  }
+
   function tarjetaEntrada(p) {
     return '<a class="entrada" href="' + urlEntrada(p) + '">' +
-      '<div class="entrada__imagen"></div>' +
+      '<div class="entrada__imagen">' + portadaEntrada(p) + '</div>' +
       '<div class="entrada__cuerpo">' +
       '<h3 class="entrada__titulo">' + E.escapar(p.titulo) + '</h3>' +
       '<div class="entrada__meta">' +
@@ -170,7 +179,7 @@
     contenedor.innerHTML =
       '<header class="articulo__cabecera"><h1 class="titulo-pagina">' + E.escapar(p.titulo) + '</h1>' +
       '<p class="articulo__meta">' + (/^\[/.test(p.fecha) ? '' : E.escapar(p.fecha) + ' · ') + E.escapar(p.categoria) + '</p></header>' +
-      '<div class="articulo__imagen" role="img" aria-label="Imagen destacada no recuperada"></div>' +
+      '<div class="articulo__imagen">' + portadaEntrada(p) + '</div>' +
       '<div class="texto articulo__cuerpo">' + cuerpo + '</div>' +
       '<p><a class="boton boton--borde" href="blog.html">← Volver al blog</a></p>';
   }

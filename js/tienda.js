@@ -198,6 +198,9 @@
 
   function ficha(el) {
     var p = estado.producto(E.parametro('p'));
+    // Una variación (p. ej. desde el carrito) abre su producto con esa opción elegida.
+    var elegida = p && p.padre ? p.slug : '';
+    if (elegida) p = estado.producto(p.padre);
     if (!p || (p.visibilidad === 'privado' && !leer(estado.claveAdmin, false))) {
       el.innerHTML = '<p class="pendiente">No se encontró el producto. <a href="tienda.html' + q() + '">Volver a la tienda</a></p>';
       return;
@@ -205,6 +208,13 @@
     document.title = p.nombre + ' – ' + tienda.nombre;
     var imagen = p.imagen ? E.imagen(p.imagen, p.nombre)
       : '<div class="sin-imagen"><span>' + E.escapar(E.iniciales(p.nombre)) + '</span><small>Imagen no recuperada</small></div>';
+    var fotos = p.imagen ? [p.imagen].concat(p.galeria || []) : [];
+    var opciones = (p.variaciones || []).map(function (v) { return { etiqueta: v.etiqueta, producto: estado.producto(v.slug) }; })
+      .filter(function (v) { return v.producto; });
+    opciones.forEach(function (v) { if (v.producto.imagen && fotos.indexOf(v.producto.imagen) === -1) fotos.push(v.producto.imagen); });
+    var miniaturas = fotos.length > 1 ? '<ul class="ficha__galeria">' + fotos.map(function (f, i) {
+      return '<li><button type="button" data-foto="' + E.escapar(f) + '"' + (i ? '' : ' aria-current="true"') + ' aria-label="Ver foto ' + (i + 1) + '"><img src="' + E.escapar(f) + '" alt="" loading="lazy"></button></li>';
+    }).join('') + '</ul>' : '';
     var corta = p.corta ? '<div class="ficha__corta">' + E.escapar(p.corta) + '</div>'
       : '';
     var pack = '';
@@ -216,7 +226,11 @@
         (p.pack.abajo ? '<p class="pack__texto">' + E.escapar(p.pack.abajo) + '</p>' : '') +
         '<p class="aviso aviso--info pack__aviso" data-pack-aviso></p>';
     }
-    if (Number(p.precio)) {
+    if (opciones.length) {
+      comprar = '<div class="ficha__comprar"><label class="solo-lectores" for="cantidad">Cantidad</label>' +
+        '<input class="cantidad" id="cantidad" type="number" min="1" value="1" data-cantidad>' +
+        '<button class="boton boton--indigo" type="button" data-agregar="" disabled>Añadir al carrito</button></div>';
+    } else if (Number(p.precio)) {
       comprar = '<div class="ficha__comprar"><label class="solo-lectores" for="cantidad">Cantidad</label>' +
         '<input class="cantidad" id="cantidad" type="number" min="1" value="1" data-cantidad>' +
         '<button class="boton boton--' + (p.tipo === 'bundle' ? 'borde' : 'indigo') + '" type="button" data-agregar="' + p.slug + '">Añadir al carrito</button></div>';
@@ -225,13 +239,18 @@
     }
     // Atributos «nombre: valor | valor» definidos en el panel → listas, como en la captura de /base/.
     var atributos = (p.atributos || '').split('\n').map(function (l) { return l.split(':'); }).filter(function (a) { return a.length > 1 && a[1].trim(); });
-    var variaciones = p.tipo === 'variable' && atributos.length
+    var variaciones = opciones.length
+      ? '<table class="variaciones"><tbody><tr><th><label for="variacion">Tamaño</label></th><td><select id="variacion" data-variacion><option value="">Elige una opción</option>' +
+        opciones.map(function (v) {
+          return '<option value="' + v.producto.slug + '"' + (v.producto.slug === elegida ? ' selected' : '') + '>' + E.escapar(v.etiqueta) + '</option>';
+        }).join('') + '</select></td></tr></tbody></table>'
+      : p.tipo === 'variable' && atributos.length
       ? '<table class="variaciones"><tbody>' + atributos.map(function (a, i) {
         return '<tr><th><label for="var-' + i + '">' + E.escapar(a[0].trim()) + '</label></th><td><select id="var-' + i + '"><option value="">Elige una opción</option>' +
           a.slice(1).join(':').split('|').map(function (v) { return '<option>' + E.escapar(v.trim()) + '</option>'; }).join('') + '</select></td></tr>';
       }).join('') + '</tbody></table>'
       : '';
-    var meta = (p.sku ? '<p><strong>SKU:</strong> ' + E.escapar(p.sku) + '</p>' : '') +
+    var meta = (p.sku || opciones.length ? '<p><strong>SKU:</strong> <span data-sku>' + E.escapar(p.sku || 'N/D') + '</span></p>' : '') +
       (p.categorias && p.categorias.length ? '<p><strong>Categoría:</strong> ' + E.escapar(p.categorias.join(', ')) + '</p>' : '') +
       '<p>Vendido por <a href="index.html' + q() + '">' + E.escapar(tienda.nombre) + '</a></p>';
     var relacionados = estado.productos().filter(function (o) { return o.slug !== p.slug; }).slice(0, 4);
@@ -240,14 +259,42 @@
     // Orden de las capturas: título, descripción corta y precio.
     el.innerHTML =
       '<nav class="migas" aria-label="Ruta"><a href="index.html' + q() + '">Inicio</a> / <a href="tienda.html' + q() + '">Tienda</a> / ' + E.escapar(p.nombre) + '</nav>' +
-      '<div class="ficha"><div class="ficha__imagen">' + imagen + '</div><div>' +
+      '<div class="ficha"><div><div class="ficha__imagen">' + imagen + '</div>' + miniaturas + '</div><div>' +
       '<h1 class="ficha__titulo">' + E.escapar(p.nombre) + '</h1>' + corta +
-      '<p class="ficha__precio">' + (Number(p.precio) ? precioHtml(p) : 'Precio a cotizar') + '</p>' +
+      '<p class="ficha__precio" data-precio>' + (Number(p.precio) ? precioHtml(p) : 'Precio a cotizar') + '</p>' +
       variaciones + pack + comprar + '<div class="ficha__meta">' + meta + '</div>' +
       '</div></div>' +
       '<div class="pestanas-producto"><ul><li>Descripción</li><li>Valoraciones (0)</li></ul>' + descripcion + '</div>' +
       (relacionados.length ? '<section class="relacionados"><h2>Productos relacionados</h2><div class="productos">' +
         relacionados.map(tarjetaProducto).join('') + '</div></section>' : '');
+
+    // Galería: la miniatura elegida pasa a ser la foto grande.
+    function mostrarFoto(src) {
+      var grande = el.querySelector('.ficha__imagen img');
+      if (grande) grande.src = src;
+      el.querySelectorAll('[data-foto]').forEach(function (b) {
+        if (b.getAttribute('data-foto') === src) b.setAttribute('aria-current', 'true'); else b.removeAttribute('aria-current');
+      });
+    }
+    el.querySelectorAll('[data-foto]').forEach(function (b) {
+      b.addEventListener('click', function () { mostrarFoto(b.getAttribute('data-foto')); });
+    });
+
+    // Variaciones: cada opción tiene su precio, SKU y foto; sin elegir no se puede comprar.
+    var selector = el.querySelector('[data-variacion]');
+    if (selector) {
+      var elegir = function () {
+        var v = estado.producto(selector.value);
+        var botonVariacion = el.querySelector('[data-agregar]');
+        botonVariacion.disabled = !v;
+        botonVariacion.setAttribute('data-agregar', v ? v.slug : '');
+        el.querySelector('[data-precio]').innerHTML = precioHtml(v || p);
+        el.querySelector('[data-sku]').textContent = v && v.sku ? v.sku : 'N/D';
+        if (v && v.imagen) mostrarFoto(v.imagen);
+      };
+      selector.addEventListener('change', elegir);
+      elegir();
+    }
 
     // Pack: la compra queda deshabilitada hasta alcanzar el mínimo («Configuración de Packs»).
     if (p.tipo === 'bundle' && p.pack) {

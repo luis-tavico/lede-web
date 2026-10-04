@@ -120,6 +120,10 @@
 .ficha { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 50px; align-items: start; }
 .ficha__imagen { aspect-ratio: 1; overflow: hidden; background: #E8EEF1; }
 .ficha__imagen img { width: 100%; height: 100%; object-fit: cover; }
+.ficha__galeria { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin: 10px 0 0; padding: 0; list-style: none; }
+.ficha__galeria button { display: block; width: 100%; aspect-ratio: 1; padding: 0; border: 0; background: #E8EEF1; opacity: .55; cursor: pointer; }
+.ficha__galeria button:hover, .ficha__galeria button[aria-current] { opacity: 1; }
+.ficha__galeria img { width: 100%; height: 100%; object-fit: cover; }
 .ficha__imagen .sin-imagen { flex-direction: column; gap: 8px; font-size: 80px; }
 .ficha__imagen .sin-imagen small { font-weight: 500; font-size: 14px; }
 .ficha__titulo { margin-bottom: 18px; color: var(--texto); font-weight: 700; font-size: 32px; }

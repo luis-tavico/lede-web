@@ -46,25 +46,29 @@ window.ESTACION = {
     "Cuando ya has iniciado tu camino para emprender descubres que emprender va más allá de solo tener un producto o servicio y vender, aprendes que hay un proceso que te garantiza un poco más el éxito, tener un modelo de negocio que no necesariamente el que planteaste en un inicio es el que te llevará a alcanzar lo que deseas, un proceso donde debes aprender a reconocer al otro (Cliente) aprender a conocer tu producto o servicio al 100 por que resulta que tu emprendimiento eres tú, es quién tú eres, con todo eso bueno o malo que creas. Si quiero un emprendimiento que funcione mírate en el espejo y pregúntate ¿Yo funciono? ¿Mi vida funciona? Si la respuesta es negativa entonces es momento de hacer una lista de quién eres para construir ese amor y pasión por ti y te aseguro que tu emprendimiento será el espejo de lo que hayas construido.",
     "Para mí el emprender es como cuando aprendes a montar bicicleta, puede ser que sea algo que siempre hayas deseado o algo que quisiste solo porque era la moda o era lo que tocaba jugar para salir con los amigos, pero aun así te toco aprender a caerte y buscar el mejor camino para disfrutar y pelear rápido y hacer las mejores piruetas, te toco aprender a que en equilibrio es como te mantenías en marcha, te toco caerte muchísimas veces pero aún así, ¿cuántas veces decidiste seguir pedaleando porque deseabas llegar a la meta?.",
     "El emprendimiento es ese camino constante que nunca sabes si estará apedreado o con baches, pero cuando sabes que estás trabajando en lo que te apasiona no importa tanto el plan, solo lo que sí sabes es que debes de seguir pedaleando, manteniendo el equilibrio y saber que cuando el camino está lleno de baches, muchas veces para no caerte hay que bajarse de la bici y toca avanzar caminando, lento pero atento por que a la meta se llega hasta que puedas soltar la bici y decidir comprarte un avión porque ahora es momento aprender a pilotear de conquistar el cielo."
-   ]
+   ],
+   "imagen": "assets/blog/el-secreto-para-alcanzar-el-exito.jpg"
   },
   {
    "slug": "un-mentor-en-el-presente-un-mejor-negocio-en-el-futuro",
    "titulo": "Un mentor en el presente, un mejor negocio en el futuro",
    "categoria": "Emprendimiento",
-   "fecha": "septiembre 18, 2020"
+   "fecha": "septiembre 18, 2020",
+   "imagen": "assets/blog/un-mentor-en-el-presente-un-mejor-negocio-en-el-futuro.jpg"
   },
   {
    "slug": "la-importancia-de-conectarte-con-tus-clientes",
    "titulo": "La Importancia de Conectarte con tus Clientes",
    "categoria": "Marketing",
-   "fecha": "septiembre 18, 2020"
+   "fecha": "septiembre 18, 2020",
+   "imagen": "assets/blog/la-importancia-de-conectarte-con-tus-clientes.jpg"
   },
   {
    "slug": "nuevos-comportamientos-del-consumidor-despues-de-la-pandemia",
    "titulo": "Nuevos comportamientos del consumidor después de la pandemia",
    "categoria": "Marketing",
-   "fecha": "[fecha]"
+   "fecha": "[fecha]",
+   "imagen": "assets/blog/la-importancia-de-conectarte-con-tus-clientes.jpg"
   }
  ],
  "emprendedores": [
@@ -1340,28 +1344,564 @@ window.ESTACION = {
    },
    "logo": "assets/emprendedores/guaperrimo/logo.png",
    "foto": "assets/emprendedores/guaperrimo/foto.jpg",
-   "portada": null,
+   "portada": "assets/emprendedores/guaperrimo/portada.jpg",
    "productos": [
-    {
-     "slug": "blend-antiestres",
-     "nombre": "Blend antiestrés",
-     "precio": 70,
-     "desde": true,
-     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres.jpg"
-    },
     {
      "slug": "gomitas-de-colageno-aliento-fresco-30-u",
      "nombre": "Gomitas de colágeno aliento fresco (30 u)",
      "precio": 76,
      "desde": false,
-     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-aliento-fresco-30-u.jpg"
+     "sku": "GP00026",
+     "corta": "Gomitas a base de colágeno, manzanilla y menta. Excelente y delicioso snack que aporta buena cantidad de colágeno.",
+     "descripcion": "Gomitas a base de colágeno, manzanilla y menta. Excelente y delicioso snack que aporta buena cantidad de colágeno.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Limpieza bucal"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-aliento-fresco-30-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-aliento-fresco-30-u-2.jpg"
+     ]
+    },
+    {
+     "slug": "blend-antiestres",
+     "nombre": "Blend antiestrés",
+     "precio": 70,
+     "desde": true,
+     "sku": "",
+     "corta": "Blend de aceites esenciales con efecto Antiestrés. Reduce el estrés, la ansiedad, el miedo y la agresividad de tu perro. Producto 100% natural.",
+     "descripcion": "Blend de aceites esenciales con efecto Antiestrés. Reduce el estrés, la ansiedad, el miedo y la agresividad de tu perro. Producto 100% natural.\nModo de uso: 1 gota por cada 10 libras de peso, colocar el producto en tus palmas y con un suave masaje lo distribuyes únicamente sobre el pelaje del cuello, evita tocar rostro, directamente en piel y heridas. Consultar la frecuencia de uso\nEnvío a domicilio con recargo extra según la zona de entrega.",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": false,
+     "existencias": "",
+     "variaciones": [
+      {
+       "etiqueta": "2 ml (40 gotas)",
+       "slug": "blend-antiestres-2-ml"
+      },
+      {
+       "etiqueta": "3 ml (60 gotas)",
+       "slug": "blend-antiestres-3-ml"
+      },
+      {
+       "etiqueta": "5 ml (100 gotas)",
+       "slug": "blend-antiestres-5-ml"
+      },
+      {
+       "etiqueta": "10 ml (200 gotas)",
+       "slug": "blend-antiestres-10-ml"
+      }
+     ],
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres.jpg"
+    },
+    {
+     "slug": "blend-antiestres-2-ml",
+     "nombre": "Blend antiestrés – 2 ml",
+     "precio": 70,
+     "desde": false,
+     "sku": "GP00008",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antiestres",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres-2-ml.jpg"
+    },
+    {
+     "slug": "blend-antiestres-3-ml",
+     "nombre": "Blend antiestrés – 3 ml",
+     "precio": 80,
+     "desde": false,
+     "sku": "GP00007",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antiestres",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres-3-ml.jpg"
+    },
+    {
+     "slug": "blend-antiestres-5-ml",
+     "nombre": "Blend antiestrés – 5 ml",
+     "precio": 120,
+     "desde": false,
+     "sku": "GP00006",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antiestres",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres-5-ml.jpg"
+    },
+    {
+     "slug": "blend-antiestres-10-ml",
+     "nombre": "Blend antiestrés – 10 ml",
+     "precio": 210,
+     "desde": false,
+     "sku": "GP00005",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antiestres",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antiestres-10-ml.jpg"
+    },
+    {
+     "slug": "jabon-antipulgas",
+     "nombre": "Jabón antipulgas",
+     "precio": 18,
+     "desde": false,
+     "sku": "GP00015",
+     "corta": "Jabón hecho a base de ingredientes naturales y delicados con la piel y pelaje de nuestros perros, contiene aceites esenciales que actúan como repelente de parásitos externos.",
+     "descripcion": "Jabón hecho a base de ingredientes naturales y delicados con la piel y pelaje de nuestros perros, contiene aceites esenciales que actúan como repelente de parásitos externos.\nEnvío a domicilio con recargo dependiendo de la zona.",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/jabon-antipulgas.jpg"
+    },
+    {
+     "slug": "te-relajante-grande",
+     "nombre": "Té relajante grande",
+     "precio": 60,
+     "desde": false,
+     "sku": "GP00013",
+     "corta": "Té relajante para perros, hecho a base de hierbas pensadas especialmente en perros, reduce el estrés, el miedo, la ansiedad y la agresividad. Es un excelente aliado en entrenamiento. Ideal para días de mucho estrés como días festivos. Consulta la frecuencia de uso",
+     "descripcion": "Té relajante para perros, hecho a base de hierbas pensadas especialmente en perros, reduce el estrés, el miedo, la ansiedad y la agresividad. Es un excelente aliado en entrenamiento. Ideal para días de mucho estrés como días festivos. Consulta la frecuencia de uso\nEnvío a domicilio con recargo adicional dependiendo la zona.",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/te-relajante-grande.jpg"
+    },
+    {
+     "slug": "pomada-humectante-para-huellas-y-codos",
+     "nombre": "Pomada humectante para huellas y codos",
+     "precio": 100,
+     "desde": false,
+     "sku": "GP00022",
+     "corta": "Hecho a base de aceite de coco, cera de abeja, mantecas vegetales y aceites esenciales que ayudan a humectar almohadillas y codos.",
+     "descripcion": "Hecho a base de aceite de coco, cera de abeja, mantecas vegetales y aceites esenciales que ayudan a humectar almohadillas y codos.\nModo de empleo: Coloca la cantidad correspondiente para abarcar el área a tratar y frota, puedes aplicarlo en sus tiempos de descanso o por las noches para evitar lamidas.",
+     "categorias": [
+      "Piel"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/pomada-humectante-para-huellas-y-codos.jpg"
+    },
+    {
+     "slug": "gomitas-de-colageno-de-pollo-30-u",
+     "nombre": "Gomitas de colágeno de pollo (30 u)",
+     "precio": 76,
+     "desde": false,
+     "sku": "GP00024",
+     "corta": "Gomitas a base de colágeno con pollo. Excelente y delicioso snack que aporta buena cantidad de colágeno.",
+     "descripcion": "Gomitas a base de colágeno con pollo. Excelente y delicioso snack que aporta buena cantidad de colágeno.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Piel"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-de-pollo-30-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-de-pollo-30-u-2.jpg"
+     ]
+    },
+    {
+     "slug": "pasta-dental",
+     "nombre": "Pasta dental",
+     "precio": 60,
+     "desde": false,
+     "sku": "GP00019",
+     "corta": "Hecho a base de aceite de coco el cual funciona como bactericida, espirulina entre otras especies que ayudan a mantener la higiene bucal de tu perro y a reducir la creación del sarro.",
+     "descripcion": "Hecho a base de aceite de coco el cual funciona como bactericida, espirulina entre otras especies que ayudan a mantener la higiene bucal de tu perro y a reducir la creación del sarro.\nModo de empleo: con ayuda de la paletita de madera coloca un poco en un cepillo dental suave o una gasa esterilizada enrollada en tu dedo indice y frota en sus dientes cuidando no ejercer presión en sus encías. 1 a 3 veces por semana.",
+     "categorias": [
+      "Limpieza bucal"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/pasta-dental.jpg"
+    },
+    {
+     "slug": "blend-antipulgas",
+     "nombre": "Blend antipulgas",
+     "precio": 70,
+     "desde": true,
+     "sku": "",
+     "corta": "Blend de aceites esenciales Antipulgas. Reduce la aparición de pulgas en tu perro. Producto 100% natural.",
+     "descripcion": "Blend de aceites esenciales Antipulgas. Reduce la aparición de pulgas en tu perro. Producto 100% natural.\nModo de uso: 1 gota por cada 10 libras de peso, colocar el producto en tus palmas y con un suave masaje lo distribuyes únicamente sobre el pelaje de todo el cuerpo, evita tocar rostro, directamente en piel y heridas. De 2 a 3 veces por semana.\nEnvío a domicilio con recargo extra según la zona de entrega.",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": false,
+     "existencias": "",
+     "variaciones": [
+      {
+       "etiqueta": "2 ml (40 gotas)",
+       "slug": "blend-antipulgas-2-ml"
+      },
+      {
+       "etiqueta": "3 ml (60 gotas)",
+       "slug": "blend-antipulgas-3-ml"
+      },
+      {
+       "etiqueta": "5 ml (100 gotas)",
+       "slug": "blend-antipulgas-5-ml"
+      },
+      {
+       "etiqueta": "10 ml (200 gotas)",
+       "slug": "blend-antipulgas-10-ml"
+      }
+     ],
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antipulgas.jpg"
+    },
+    {
+     "slug": "blend-antipulgas-2-ml",
+     "nombre": "Blend antipulgas – 2 ml",
+     "precio": 70,
+     "desde": false,
+     "sku": "GP00004",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antipulgas",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antipulgas-2-ml.jpg"
+    },
+    {
+     "slug": "blend-antipulgas-3-ml",
+     "nombre": "Blend antipulgas – 3 ml",
+     "precio": 80,
+     "desde": false,
+     "sku": "GP00003",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antipulgas",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antipulgas-3-ml.jpg"
+    },
+    {
+     "slug": "blend-antipulgas-5-ml",
+     "nombre": "Blend antipulgas – 5 ml",
+     "precio": 120,
+     "desde": false,
+     "sku": "GP00002",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antipulgas",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antipulgas-5-ml.jpg"
+    },
+    {
+     "slug": "blend-antipulgas-10-ml",
+     "nombre": "Blend antipulgas – 10 ml",
+     "precio": 210,
+     "desde": false,
+     "sku": "GP00001",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-antipulgas",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-antipulgas-10-ml.jpg"
     },
     {
      "slug": "gomitas-de-colageno-relajantes-30-u",
      "nombre": "Gomitas de colágeno relajantes (30 u)",
      "precio": 76,
      "desde": false,
-     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-relajantes-30-u.jpg"
+     "sku": "GP00028",
+     "corta": "Gomitas a base de colágeno y nuestro té relajante. Excelente y delicioso snack que aporta buena cantidad de colágeno y al mismo tiempo tiene un efecto relajante, ideal para reducir el estrés, el miedo y la agresividad.",
+     "descripcion": "Gomitas a base de colágeno y nuestro té relajante. Excelente y delicioso snack que aporta buena cantidad de colágeno y al mismo tiempo tiene un efecto relajante, ideal para reducir el estrés, el miedo y la agresividad.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Piel",
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-relajantes-30-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-relajantes-30-u-2.jpg"
+     ]
+    },
+    {
+     "slug": "bano-seco-pequeno",
+     "nombre": "Baño seco pequeño",
+     "precio": 65,
+     "desde": false,
+     "sku": "GP00018",
+     "corta": "Polvo hecho a base de tierra de diatomea, aceites vegetales, vinagre de manzana y una selección de aceites esenciales que le brindaran a tu perro un delicioso aroma y un efecto antipulgas. absorbe la grasa de forma natural entre baños.",
+     "descripcion": "Polvo hecho a base de tierra de diatomea, aceites vegetales, vinagre de manzana y una selección de aceites esenciales que le brindaran a tu perro un delicioso aroma y un efecto antipulgas. absorbe la grasa de forma natural entre baños.\nModo de empleo: Espolvorea todo el cuerpo y luego cepilla varias veces, evita que el polvo toque ojos o nariz de tu perro y tuyas ya que su función es absorber humedades.\nNota: La cantidad de baños depende del tamaño del perro",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 20,
+     "imagen": "assets/emprendedores/guaperrimo/productos/bano-seco-pequeno.jpg"
+    },
+    {
+     "slug": "desinfectante-natural-limpia-patas",
+     "nombre": "Desinfectante natural / Limpia patas",
+     "precio": 60,
+     "desde": false,
+     "sku": "GP00020",
+     "corta": "Producto especializado para eliminar bacterias, hongos y altas cargas de virus (elimina también el virus del COVID 19) hecho a base de cítricos, glicerina, entre otros componentes.",
+     "descripcion": "Producto especializado para eliminar bacterias, hongos y altas cargas de virus (elimina también el virus del COVID 19) hecho a base de cítricos, glicerina, entre otros componentes.\nModo de empleo: Diluir 30ml en un litro de agua. Puedes colocar el producto directamente en las patitas y luego secar muy bien con un trapo o colocarlo primero en el trapo y luego frotar cada patita. También puedes con ayuda de un trapo desinfectar el pelaje de perro, evitando colocarlo en las mucosas. puedes desinfectar cualquier superficie y piel.",
+     "categorias": [
+      "Limpieza"
+     ],
+     "gestionar": true,
+     "existencias": 20,
+     "imagen": "assets/emprendedores/guaperrimo/productos/desinfectante-natural-limpia-patas.jpg"
+    },
+    {
+     "slug": "antipulgas-para-jardin",
+     "nombre": "Antipulgas para jardín",
+     "precio": 100,
+     "desde": false,
+     "sku": "GP00021",
+     "corta": "Hecho a base de tierra de diatomeas, insecticida 100% natural no dañino para mascotas o niños, ayuda a eliminar pulgas, garrapatas, zompopos, hormigas entre otros.",
+     "descripcion": "Hecho a base de tierra de diatomeas, insecticida 100% natural no dañino para mascotas o niños, ayuda a eliminar pulgas, garrapatas, zompopos, hormigas entre otros.\nModo de empleo: Espolvorear en todo el jardín o en áreas especificas, por ser un polvo fino se recomienda aplicar muy cerca de la de grama, utilizar lentes de seguridad.",
+     "categorias": [
+      "Antipulgas"
+     ],
+     "gestionar": true,
+     "existencias": 20,
+     "imagen": "assets/emprendedores/guaperrimo/productos/antipulgas-para-jardin.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/antipulgas-para-jardin-2.jpg"
+     ]
+    },
+    {
+     "slug": "blend-calmante-de-alergias",
+     "nombre": "Blend calmante de alergias",
+     "precio": 70,
+     "desde": true,
+     "sku": "",
+     "corta": "Blend de aceites esenciales Calmante de alergias. Refresca, relaja y reduce la comezón que provocan las alergias de piel en tu perro. Producto 100% natural.",
+     "descripcion": "Blend de aceites esenciales Calmante de alergias. Refresca, relaja y reduce la comezón que provocan las alergias de piel en tu perro. Producto 100% natural.\nModo de uso: 1 gota por cada 10 libras de peso, colocar el producto en tus palmas y con un suave masaje lo distribuyes únicamente sobre el pelaje de todo el cuerpo, evita tocar rostro, directamente en piel y heridas. Consulta la frecuencia de uso.\nEnvío a domicilio con recargo extra según la zona de entrega.",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": false,
+     "existencias": "",
+     "variaciones": [
+      {
+       "etiqueta": "2 ml (40 gotas)",
+       "slug": "blend-calmante-de-alergias-2-ml"
+      },
+      {
+       "etiqueta": "3 ml (60 gotas)",
+       "slug": "blend-calmante-de-alergias-3-ml"
+      },
+      {
+       "etiqueta": "5 ml (100 gotas)",
+       "slug": "blend-calmante-de-alergias-5-ml"
+      },
+      {
+       "etiqueta": "10 ml (200 gotas)",
+       "slug": "blend-calmante-de-alergias-10-ml"
+      }
+     ],
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-calmante-de-alergias.jpg"
+    },
+    {
+     "slug": "blend-calmante-de-alergias-2-ml",
+     "nombre": "Blend calmante de alergias – 2 ml",
+     "precio": 70,
+     "desde": false,
+     "sku": "GP00012",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-calmante-de-alergias",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-calmante-de-alergias-2-ml.jpg"
+    },
+    {
+     "slug": "blend-calmante-de-alergias-3-ml",
+     "nombre": "Blend calmante de alergias – 3 ml",
+     "precio": 80,
+     "desde": false,
+     "sku": "GP00011",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-calmante-de-alergias",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-calmante-de-alergias-3-ml.jpg"
+    },
+    {
+     "slug": "blend-calmante-de-alergias-5-ml",
+     "nombre": "Blend calmante de alergias – 5 ml",
+     "precio": 120,
+     "desde": false,
+     "sku": "GP00010",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-calmante-de-alergias",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-calmante-de-alergias-5-ml.jpg"
+    },
+    {
+     "slug": "blend-calmante-de-alergias-10-ml",
+     "nombre": "Blend calmante de alergias – 10 ml",
+     "precio": 210,
+     "desde": false,
+     "sku": "GP00009",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "visibilidad": "privado",
+     "padre": "blend-calmante-de-alergias",
+     "imagen": "assets/emprendedores/guaperrimo/productos/blend-calmante-de-alergias-10-ml.jpg"
+    },
+    {
+     "slug": "jabon-antiestres",
+     "nombre": "Jabón antiestrés",
+     "precio": 18,
+     "desde": false,
+     "sku": "GP00016",
+     "corta": "Jabón hecho a base de ingredientes naturales y delicados con la piel y pelaje de nuestros perros, contiene aceites esenciales que actúan como antiestrés.",
+     "descripcion": "Jabón hecho a base de ingredientes naturales y delicados con la piel y pelaje de nuestros perros, contiene aceites esenciales que actúan como antiestrés.\nEnvío a domicilio con recargo dependiendo de la zona.",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/jabon-antiestres.jpg"
+    },
+    {
+     "slug": "jabon-calmante-de-alergias",
+     "nombre": "Jabón calmante de alergias",
+     "precio": 18,
+     "desde": false,
+     "sku": "GP00017",
+     "corta": "Jabón hecho a base de aceite de coco, caléndula y áloe vera, delicados con la piel y pelaje de nuestros perros, pensado para pieles dañadas, contiene aceites esenciales que actúan como refrescante, relajante y reductores de la comezón provocada por la alergia.",
+     "descripcion": "Jabón hecho a base de aceite de coco, caléndula y áloe vera, delicados con la piel y pelaje de nuestros perros, pensado para pieles dañadas, contiene aceites esenciales que actúan como refrescante, relajante y reductores de la comezón provocada por la alergia.\nEnvío a domicilio con recargo adicional dependiendo la zona.",
+     "categorias": [
+      "Calmante de alergias"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/jabon-calmante-de-alergias.jpg"
+    },
+    {
+     "slug": "te-relajante-pequeno",
+     "nombre": "Té relajante pequeño",
+     "precio": 25,
+     "desde": false,
+     "sku": "GP00014",
+     "corta": "Té relajante para perros, hecho a base de hierbas pensadas especialmente en perros, reduce el estrés, el miedo, la ansiedad y la agresividad. Es un excelente aliado en entrenamiento. Ideal para días de mucho estrés como días festivos. Consulta la frecuencia de uso",
+     "descripcion": "Té relajante para perros, hecho a base de hierbas pensadas especialmente en perros, reduce el estrés, el miedo, la ansiedad y la agresividad. Es un excelente aliado en entrenamiento. Ideal para días de mucho estrés como días festivos. Consulta la frecuencia de uso\nEnvío a domicilio con recargo adicional dependiendo la zona.",
+     "categorias": [
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/te-relajante-pequeno.jpg"
+    },
+    {
+     "slug": "pomada-humectante-y-reductora-de-dolores",
+     "nombre": "Pomada humectante y reductora de dolores en huellas y codos",
+     "precio": 100,
+     "desde": false,
+     "sku": "GP00023",
+     "corta": "Hecho a base de aceite de coco, cera de abeja, mantecas vegetales y aceites esenciales que ayudan a humectar y reduce el dolor de las almohadillas y codos.",
+     "descripcion": "Hecho a base de aceite de coco, cera de abeja, mantecas vegetales y aceites esenciales que ayudan a humectar y reduce el dolor de las almohadillas y codos.\nModo de empleo: Coloca la cantidad correspondiente para abarcar el área a tratar y frota, puedes aplicarlo en sus tiempos de descanso o por las noches para evitar lamidas.",
+     "categorias": [
+      "Piel"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/pomada-humectante-y-reductora-de-dolores.jpg"
+    },
+    {
+     "slug": "gomitas-de-colageno-de-pollo-16-u",
+     "nombre": "Gomitas de colágeno de pollo (16 u)",
+     "precio": 55,
+     "desde": false,
+     "sku": "GP00025",
+     "corta": "Gomitas a base de colágeno con pollo. Excelente y delicioso snack que aporta buena cantidad de colágeno.",
+     "descripcion": "Gomitas a base de colágeno con pollo. Excelente y delicioso snack que aporta buena cantidad de colágeno.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Piel"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-de-pollo-16-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-de-pollo-16-u-2.jpg"
+     ]
+    },
+    {
+     "slug": "gomitas-de-colageno-aliento-fresco-16-u",
+     "nombre": "Gomitas de colágeno aliento fresco (16 u)",
+     "precio": 55,
+     "desde": false,
+     "sku": "GP00027",
+     "corta": "Gomitas a base de colágeno, manzanilla y menta. Excelente y delicioso snack que aporta buena cantidad de colágeno.",
+     "descripcion": "Gomitas a base de colágeno, manzanilla y menta. Excelente y delicioso snack que aporta buena cantidad de colágeno.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Limpieza bucal"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-aliento-fresco-16-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-aliento-fresco-16-u-2.jpg"
+     ]
+    },
+    {
+     "slug": "gomitas-de-colageno-relajantes-16-u",
+     "nombre": "Gomitas de colágeno relajantes (16 u)",
+     "precio": 55,
+     "desde": false,
+     "sku": "GP00029",
+     "corta": "Gomitas a base de colágeno y nuestro té relajante. Excelente y delicioso snack que aporta buena cantidad de colágeno y al mismo tiempo tiene un efecto relajante, ideal para reducir el estrés, el miedo y la agresividad.",
+     "descripcion": "Gomitas a base de colágeno y nuestro té relajante. Excelente y delicioso snack que aporta buena cantidad de colágeno y al mismo tiempo tiene un efecto relajante, ideal para reducir el estrés, el miedo y la agresividad.\nBeneficios del colágeno: Alivia la artritis Mejora la salud de las articulaciones mejora la piel, el pelaje, las uñas y la digestión.",
+     "categorias": [
+      "Piel",
+      "Antiestrés"
+     ],
+     "gestionar": true,
+     "existencias": 10,
+     "imagen": "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-relajantes-16-u.jpg",
+     "galeria": [
+      "assets/emprendedores/guaperrimo/productos/gomitas-de-colageno-relajantes-16-u-2.jpg"
+     ]
     }
    ]
   },

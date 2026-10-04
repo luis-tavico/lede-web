@@ -62,6 +62,31 @@
 .entrada__imagen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(180deg, #E6E6E6, #B3B3B3); }
 .entrada__imagen img { width: 100%; height: 100%; object-fit: cover; }
 .entrada__imagen::after { content: ""; position: absolute; inset: 0; background: rgba(29, 13, 129, .25); }
+/* Con la portada por defecto no hace falta el velo. */
+.entrada__imagen:has(.portada-blog)::after { content: none; }
+
+/* Portada por defecto de un artículo: logo de La Estación y categoría. */
+.portada-blog {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6%;
+  width: 100%; height: 100%; padding: 6%;
+  background:
+    radial-gradient(circle at 88% 12%, rgba(151, 215, 0, .9) 0 11%, transparent 11.5%),
+    radial-gradient(circle at 8% 96%, rgba(255, 255, 255, .12) 0 22%, transparent 22.5%),
+    var(--indigo);
+  color: #fff;
+}
+.portada-blog img { width: 46%; height: auto; }
+.portada-blog span { padding: 4px 14px; border-radius: 999px; background: var(--lima); color: var(--indigo); font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; }
+.portada-blog--lima {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(29, 13, 129, .9) 0 11%, transparent 11.5%),
+    radial-gradient(circle at 8% 96%, rgba(255, 255, 255, .25) 0 22%, transparent 22.5%),
+    var(--lima);
+}
+.portada-blog--lima span { background: var(--indigo); color: #fff; }
+.articulo__imagen .portada-blog img { width: 30%; }
+.articulo__imagen { overflow: hidden; }
+.articulo__imagen > img { width: 100%; height: 100%; object-fit: cover; }
 .entrada__cuerpo { display: flex; flex: 1; flex-direction: column; gap: 18px; padding: 20px; }
 .entrada__titulo { font-weight: 700; font-size: 18px; line-height: 1.35; }
 .entrada__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; margin-top: auto; font-size: 13px; color: #7A7A7A; }

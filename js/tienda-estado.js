@@ -115,6 +115,12 @@
       var lista = tienda.productos.map(function (p) {
         var base = { slug: p.slug, nombre: p.nombre, precio: p.precio, rebajado: null, desde: p.desde, imagen: p.imagen ? E.ruta(p.imagen) : null,
           tipo: p.desde ? 'variable' : 'simple', descripcion: '', corta: '', sku: '', existencias: '', categorias: [], visibilidad: 'publico', archivado: true };
+        // Datos del catálogo que el emprendedor entregó al CME (descripción, SKU, galería, variaciones…).
+        ['descripcion', 'corta', 'sku', 'gestionar', 'existencias', 'categorias', 'variaciones', 'padre', 'visibilidad'].forEach(function (c) {
+          if (p[c] !== undefined) base[c] = p[c];
+        });
+        if (p.galeria) base.galeria = p.galeria.map(E.ruta);
+        if (p.variaciones) base.tipo = 'variable';
         return Object.assign(base, ajustes.productos.cambios[p.slug] || {});
       }).concat(ajustes.productos.nuevos.map(function (p) { return Object.assign({ archivado: false }, p); }));
       return lista.filter(function (p) {
