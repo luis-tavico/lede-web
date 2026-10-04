@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es-GT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Estación del Emprendedor – Reconstrucción del marketplace</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap">
+<link rel="stylesheet" href="css/base.css">
+<style>
+  /* Esta página no formaba parte del marketplace: es el índice de la reconstrucción. */
+  .guia { max-width: 980px; padding-top: 48px; padding-bottom: 64px; }
+  .guia__logo { width: 130px; margin-bottom: 24px; }
+  .guia__intro { max-width: 720px; margin-bottom: 36px; font-size: 17px; }
+  .guia__vistas { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0 0 36px; padding: 0; list-style: none; }
+  .guia__vista { display: flex; flex-direction: column; gap: 12px; padding: 24px; border-radius: var(--radio); box-shadow: var(--sombra-tarjeta); }
+  .guia__vista h2 { color: var(--indigo); font-size: 20px; }
+  .guia__vista p { margin: 0; font-size: 15px; }
+  .guia__vista .boton, .guia__vista select { margin-top: auto; }
+  .guia__vista select { min-height: 44px; padding: 0 10px; border: 1px solid #CFCFCF; border-radius: var(--radio); background: #fff; }
+  @media (max-width: 767px) { .guia__vistas { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="contenedor guia">
+  <img class="guia__logo" src="assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor" width="422" height="393">
+  <h1 class="titulo-pagina">Guía de la demostración</h1>
+  <p class="guia__intro">Reconstrucción del marketplace del Centro Municipal de Emprendimiento de la Municipalidad de Guatemala. Desde aquí se entra a sus tres vistas.</p>
+
+  <ul class="guia__vistas">
+    <li class="guia__vista">
+      <h2>1. Comprador</h2>
+      <p>Portal, directorio por categorías, perfil de cada emprendimiento, tienda, carrito y pago.</p>
+      <a class="boton boton--indigo" href="portal.html">Abrir el portal</a>
+    </li>
+    <li class="guia__vista">
+      <h2>2. Emprendedor</h2>
+      <p>Panel de su tienda: productos, pedidos, envíos, cupones y configuración.</p>
+      <label class="solo-lectores" for="tienda">Tienda</label>
+      <select id="tienda"></select>
+      <a class="boton boton--indigo" id="entrar-tienda" href="#">Entrar al panel de la tienda</a>
+    </li>
+    <li class="guia__vista">
+      <h2>3. Administrador del CME</h2>
+      <p>Administrador de la red: lista de tiendas, alta de una tienda nueva, desactivar, archivar y clonar.</p>
+      <a class="boton boton--indigo" href="wp-login.html">Entrar como CME</a>
+    </li>
+  </ul>
+
+  <p class="nota-demo">En los dos paneles basta con presionar «Acceder»: no hace falta usuario ni contraseña. Lo que se cree o modifique (productos, pedidos, tiendas nuevas) se guarda solo en este navegador.</p>
+</main>
+<script src="js/datos.js"></script>
+<script src="js/comun.js"></script>
+<script>
+(function () {
+  var lista = document.getElementById('tienda');
+  var enlace = document.getElementById('entrar-tienda');
+  window.Estacion.datos.emprendedores.filter(function (e) { return e.tienda && e.estadoSitio === 'activo'; }).forEach(function (e) {
+    var o = document.createElement('option');
+    o.value = e.tienda;
+    o.textContent = e.nombre;
+    lista.appendChild(o);
+  });
+  function actualizar() { enlace.href = 'tienda/wp-login.html?t=' + lista.value; }
+  lista.addEventListener('change', actualizar);
+  actualizar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es-GT" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Políticas de Envío y Devoluciones – Tienda</title>
+<meta name="description" content="Tienda en La Estación del Emprendedor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/tienda.css">
+</head>
+<body data-pagina="politicas">
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<div class="barra-superior">
+  <div class="contenedor">
+    <div class="barra-superior__datos">
+      <span><span data-icono="telefono"></span><span data-tienda-telefono></span></span>
+      <span><span data-icono="correo"></span><span data-tienda-correo></span></span>
+    </div>
+    <ul class="redes" aria-label="Redes sociales de la tienda">
+      <li hidden><a data-red="facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><span data-icono="facebook"></span></a></li>
+      <li hidden><a data-red="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+      <li hidden><a data-red="web" href="#" aria-label="Sitio web" target="_blank" rel="noopener"><span data-icono="web"></span></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="encabezado encabezado-tienda">
+  <div class="contenedor">
+    <a class="encabezado-tienda__logo" data-tienda="index.html" href="index.html" data-tienda-logo></a>
+    <form class="buscador" action="tienda.html" role="search">
+      <input type="hidden" name="t">
+      <label class="solo-lectores" for="buscar">Busca un producto</label>
+      <input id="buscar" name="q" type="search" placeholder="Busca un producto">
+      <button type="submit" aria-label="Buscar"><span data-icono="buscar"></span></button>
+    </form>
+    <a class="minicarrito" data-tienda="carrito.html" href="carrito.html">
+      <span data-minicarrito-total>Q0.00</span><span data-icono="carrito"></span>
+      <span class="minicarrito__cantidad" data-minicarrito-cantidad></span>
+      <span class="solo-lectores">Ver carrito</span>
+    </a>
+    <button class="encabezado__abrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Menú"><span data-icono="menu"></span></button>
+    <nav class="menu" id="menu-principal" aria-label="Menú de la tienda">
+      <ul>
+        <li><a data-tienda="index.html" href="index.html">Inicio</a></li>
+        <li><a data-tienda="tienda.html" href="tienda.html">Tienda</a></li>
+        <li><a data-tienda="quienes-somos.html" href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a data-tienda="contacto.html" href="contacto.html">Contacto</a></li>
+        <li><a data-tienda="mi-cuenta.html" href="mi-cuenta.html">Mi Cuenta</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="contenedor seccion texto" data-render="politicas">
+    <h1 class="titulo-pagina">Políticas de Envío y Devoluciones</h1>
+    <h2>Envíos</h2>
+    <p>Solo podrá entregar el/los producto(s), si estos ya fueron pagados por el comprador, los cuales serán entregados en la dirección indicada en el proceso de compra.</p>
+    <p>El comprador antes de ejecutar la compra debe revisar cuidadosamente los datos proporcionados para realizar las entregas.</p>
+    <p>Los costos de envío se cargan al momento del checkout y son debidamente detallados antes de cualquier pago.</p>
+    <p>Las tarifas dependen de las zonas o departamentos de Guatemala y pueden variar según las distancias.</p>
+    <p>El tiempo de entrega es un promedio de 1 a 4 días hábiles en el perímetro de la Ciudad de Guatemala. Sin embargo pueden variar y se detallan en la descripción de cada producto.</p>
+    <p><span data-tienda-mayus>NOMBRE DE LA TIENDA</span> se asegurará que su mensajero se presente debidamente identificado en el momento de la entrega.</p>
+    <h2>Devoluciones</h2>
+    <p>El comprador antes de ejecutar la compra debe revisar cuidadosamente el horario, fecha y los productos seleccionados, ya que una vez realizada esta selección no hay ninguna opción para realizar cambios, reembolsos ni devoluciones, salvo la garantía por las siguientes causas:</p>
+    <ul>
+      <li>Si el artículo presenta defectos de fabricación, sólo si ésta fue reportada durante las primeras 36 horas posteriores a su entrega.</li>
+      <li>Si existe equivocación en el artículo enviado, conservando la envoltura original de envío y empaque o etiquetas y sin presentar muestras de maltrato.</li>
+      <li>Para la devolución de todo tipo de producto se debe presentar junto con la mercancía la factura original.</li>
+      <li>En caso de que se haya enviado otra mercancía por equivocación se podrá realizar el cambio físico. Si la tienda donde se compró no cuenta con la existencia, podrás escoger otro artículo equivalente de tu preferencia.</li>
+    </ul>
+    <p>Si por alguna causa el producto no puede ser entregado por <span data-tienda-mayus>NOMBRE DE LA TIENDA</span> por falta de inventario, el comprador será contactado para fijar una nueva fecha de entrega o se hará un reembolso del 100% del total cancelado.</p>
+  </section>
+</main>
+
+<section class="boletin" aria-labelledby="boletin-titulo">
+  <div class="contenedor">
+    <div>
+      <h2 id="boletin-titulo">Mantente informado</h2>
+      <p>Recibe todas nuestras noticias</p>
+    </div>
+    <form>
+      <label class="solo-lectores" for="boletin-correo">Correo electrónico</label>
+      <input id="boletin-correo" type="email" placeholder="Email" autocomplete="email" required>
+      <button class="boton boton--indigo" type="submit">Enviar</button>
+    </form>
+    <p class="boletin__aviso" role="status" hidden>¡Gracias! Suscripción registrada (demostración: no se guarda ningún dato).</p>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor pie__columnas">
+    <a class="pie__logo" href="../portal.html"><img src="../assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor" width="422" height="393" loading="lazy"></a>
+    <nav aria-labelledby="pie-tienda">
+      <h2 id="pie-tienda" data-tienda-nombre>Tienda</h2>
+      <ul>
+        <li><a data-tienda="quienes-somos.html" href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a data-tienda="contacto.html" href="contacto.html">Contacto</a></li>
+        <li><a data-tienda="politicas-de-envio-y-devoluciones.html" href="politicas-de-envio-y-devoluciones.html">Envíos y Devoluciones</a></li>
+        <li><a href="../terminos-y-condiciones.html">Términos y Condiciones</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Ayuda</h2>
+      <ul class="redes" aria-label="Redes sociales de la tienda">
+        <li hidden><a data-red="facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><span data-icono="facebook"></span></a></li>
+        <li hidden><a data-red="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+        <li hidden><a data-red="web" href="#" aria-label="Sitio web" target="_blank" rel="noopener"><span data-icono="web"></span></a></li>
+      </ul>
+      <div class="tarjetas-pago" aria-label="Tarjetas aceptadas"><span>VISA</span><span>Mastercard</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/datos.js"></script>
+<script src="../js/iconos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/tienda-estado.js"></script>
+<script src="../js/tienda.js"></script>
+</body>
+</html>

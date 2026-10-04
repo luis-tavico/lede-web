@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="es-GT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La Estación del Emprendedor – Compra con sentido, cómprale a un emprendedor</title>
+<meta name="description" content="Marketplace del Centro Municipal de Emprendimiento de la Municipalidad de Guatemala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/portal.css">
+</head>
+<body data-pagina="inicio">
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<div class="barra-superior">
+  <div class="contenedor">
+    <div class="barra-superior__datos">
+      <a href="tel:+50222530656"><span data-icono="telefono"></span>2253 0656</a>
+      <a href="mailto:emprende@muniguate.com"><span data-icono="correo"></span>emprende@muniguate.com</a>
+    </div>
+    <ul class="redes" aria-label="Redes sociales del CME">
+      <li><a href="#" aria-label="Facebook"><span data-icono="facebook"></span></a></li>
+      <li><a href="https://www.instagram.com/cmeguatemala/" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+      <li><a href="https://www.youtube.com/playlist?list=PLtTuc0YavbN4wQdaTpfM3vCAxXPz9aJP-" aria-label="YouTube" target="_blank" rel="noopener"><span data-icono="youtube"></span></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="encabezado">
+  <div class="contenedor encabezado__fila">
+    <a class="encabezado__logo" href="portal.html"><img src="assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor — inicio" width="422" height="393"></a>
+    <form class="buscador encabezado__buscador" action="emprendimientos.html" role="search">
+      <label class="solo-lectores" for="buscar">Buscar emprendimientos o productos</label>
+      <input id="buscar" name="q" type="search" placeholder="Buscar">
+      <button type="submit" aria-label="Buscar"><span data-icono="buscar"></span></button>
+    </form>
+    <button class="encabezado__abrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Menú"><span data-icono="menu"></span></button>
+  </div>
+  <nav class="menu menu--gris" id="menu-principal" aria-label="Menú principal">
+    <ul class="contenedor">
+      <li><a href="portal.html" aria-current="page">Inicio</a></li>
+      <li><a href="quienes-somos.html">¿Quiénes somos?</a></li>
+      <li><a href="emprendimientos.html">Emprendimientos</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="contenido">
+  <section class="carrusel" aria-roledescription="carrusel" aria-label="Destacados">
+    <div class="carrusel__pista">
+      <div class="carrusel__diapositiva">
+        <img src="assets/portadas/compra-con-sentido.png" alt="Compra con sentido, cómprale a un emprendedor. Municipalidad de Guatemala" width="1920" height="550">
+      </div>
+    </div>
+    <button class="carrusel__flecha carrusel__flecha--anterior" type="button" aria-label="Diapositiva anterior"><span data-icono="anterior"></span></button>
+    <button class="carrusel__flecha carrusel__flecha--siguiente" type="button" aria-label="Diapositiva siguiente"><span data-icono="siguiente"></span></button>
+  </section>
+  <div class="carrusel__puntos"></div>
+
+  <section class="contenedor logos-emprendedores" aria-label="Emprendedores">
+    <ul data-render="logos"></ul>
+  </section>
+
+  <section class="contenedor seccion" data-render="directorio" aria-labelledby="directorio-titulo">
+    <h2 class="solo-lectores" id="directorio-titulo">Emprendimientos por categoría</h2>
+    <p class="directorio__resultado" role="status" hidden></p>
+    <ul class="pestanas" role="tablist" aria-label="Categorías"></ul>
+    <div class="rejilla" id="rejilla-emprendimientos" role="tabpanel"></div>
+  </section>
+
+  <section class="contenedor seccion" aria-label="Beneficios">
+    <div class="beneficios">
+      <div class="beneficio"><img src="assets/iconos/beneficios/compra-en-linea.png" alt=""><strong>Compra en línea hoy</strong><span>sin salir de casa</span></div>
+      <div class="beneficio"><img src="assets/iconos/beneficios/envio-gratis.png" alt=""><strong>Envío gratis</strong><span>a partir de Q150</span></div>
+      <div class="beneficio"><img src="assets/iconos/beneficios/pago-tarjeta.png" alt=""><strong>Paga de forma segura</strong><span>con tu tarjeta</span></div>
+    </div>
+  </section>
+
+  <!-- Banda gris con banner. El banner original no se recuperó; el texto viene de la
+       propuesta de diseño en la presentación «Marketplace La Estación del Emprendedor». -->
+  <section class="banda" aria-label="Banner">
+    <div class="contenedor">
+      <div class="banda__banner"><p>Impulsando el emprendimiento<br>en la Ciudad de Guatemala</p></div>
+    </div>
+  </section>
+
+  <section class="contenedor seccion" aria-labelledby="noticias-titulo">
+    <h2 class="titulo-seccion" id="noticias-titulo">Noticias</h2>
+    <div class="rejilla rejilla--3" data-render="noticias"></div>
+  </section>
+</main>
+
+<section class="instituciones" aria-label="Con el apoyo de">
+  <div class="contenedor">
+    <a href="https://www.muniguate.com/" target="_blank" rel="noopener"><img src="assets/logos/muniguate.png" alt="Municipalidad de Guatemala" width="800" height="477" loading="lazy"></a>
+    <img src="assets/logos/cme.png" alt="Centro Municipal de Emprendimiento" width="600" height="600" loading="lazy">
+    <a href="https://www.undp.org/es/guatemala" target="_blank" rel="noopener"><img src="assets/logos/pnud.png" alt="Programa de las Naciones Unidas para el Desarrollo (PNUD)" width="159" height="318" loading="lazy"></a>
+  </div>
+</section>
+
+<section class="boletin" aria-labelledby="boletin-titulo">
+  <div class="contenedor">
+    <div>
+      <h2 id="boletin-titulo">Mantente informado</h2>
+      <p>Recibe todas nuestras noticias</p>
+    </div>
+    <form>
+      <label class="solo-lectores" for="boletin-correo">Correo electrónico</label>
+      <input id="boletin-correo" type="email" placeholder="Email" autocomplete="email" required>
+      <button class="boton boton--indigo" type="submit">Enviar</button>
+    </form>
+    <p class="boletin__aviso" role="status" hidden>¡Gracias! Suscripción registrada (demostración: no se guarda ningún dato).</p>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor pie__columnas">
+    <a class="pie__logo" href="portal.html"><img src="assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor" width="422" height="393" loading="lazy"></a>
+    <div>
+      <address>
+        8a. Avenida 12-58 zona 1, interior Casa Municipal<br>
+        Teléfono: <a href="tel:+50222530656">2253 0656</a><br>
+        <a href="mailto:emprende@muniguate.com">emprende@muniguate.com</a>
+      </address>
+      <ul class="redes" aria-label="Redes sociales del CME">
+        <li><a href="#" aria-label="Facebook"><span data-icono="facebook"></span></a></li>
+        <li><a href="https://www.instagram.com/cmeguatemala/" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+        <li><a href="https://www.youtube.com/playlist?list=PLtTuc0YavbN4wQdaTpfM3vCAxXPz9aJP-" aria-label="YouTube" target="_blank" rel="noopener"><span data-icono="youtube"></span></a></li>
+      </ul>
+    </div>
+    <nav aria-labelledby="pie-enlaces">
+      <h2 id="pie-enlaces">Enlaces</h2>
+      <ul>
+        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a href="emprendimientos.html">Emprendimientos</a></li>
+        <li><a href="terminos-y-condiciones.html">Términos y Condiciones</a></li>
+        <li><a href="https://www.muniguate.com/" target="_blank" rel="noopener">Municipalidad de Guatemala</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script src="js/datos.js"></script>
+<script src="js/iconos.js"></script>
+<script src="js/comun.js"></script>
+<script src="js/portal.js"></script>
+</body>
+</html>

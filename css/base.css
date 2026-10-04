@@ -1,0 +1,337 @@
+/* ==========================================================================
+   La Estación del Emprendedor — estilos base (portal y tiendas)
+   Paleta y medidas tomadas de la captura de junio de 2021 y de las capturas
+   del documento «Cambios» del CME. Ver README.md.
+   ========================================================================== */
+
+:root {
+  --lima: #97D700;
+  --lima-oscuro: #86C000;
+  --lima-texto: #4F7300;      /* lima con contraste suficiente sobre blanco */
+  --indigo: #1D0D81;
+  --indigo-hover: #2C1BA6;
+  --texto: #4D4D4D;
+  --gris-menu: #F8F8F8;
+  --gris-input: #ECEEEF;
+  --gris-banda: #F2F2F2;
+  --borde: #E5E5E5;
+  --error: #C0392B;
+
+  --sombra-tarjeta: 0 0 10px rgba(0, 0, 0, .15);
+  --radio: 3px;
+  --ancho: 1140px;
+
+  --fuente: 'Montserrat', system-ui, sans-serif;
+}
+
+/* ---------- Reinicio mínimo ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--texto);
+  font: 400 16px/1.6 var(--fuente);
+}
+img { max-width: 100%; height: auto; display: block; }
+[hidden] { display: none !important; }
+a { color: var(--indigo); text-decoration: none; }
+a:hover { color: var(--lima-texto); }
+h1, h2, h3 { margin: 0; line-height: 1.2; }
+p { margin: 0 0 1em; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--indigo); outline-offset: 2px; }
+
+.contenedor { width: 100%; max-width: var(--ancho); margin: 0 auto; padding: 0 20px; }
+.solo-lectores {
+  position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.salto {
+  position: absolute; top: -60px; left: 16px; z-index: 10;
+  padding: 10px 16px; background: var(--indigo); color: #fff; font-weight: 700;
+}
+.salto:focus { top: 16px; color: #fff; }
+.icono { display: inline-flex; flex: none; }
+.icono svg { width: 1em; height: 1em; }
+
+/* Marcador para lo que no se recuperó (regla del proyecto: no inventar). */
+.pendiente {
+  display: block;
+  padding: 12px 16px;
+  border: 1.5px dashed #B8B8C8;
+  border-radius: var(--radio);
+  background: #FAFAFC;
+  color: #5A5A6E;
+  font-size: 14px;
+}
+.pendiente--en-linea { display: inline; padding: 0 6px; }
+
+/* Aviso de la demostración: borde lima y fondo gris. */
+.nota-demo { margin: 0 0 16px; padding: 14px 18px; border-left: 4px solid #97D700; border-radius: 3px; background: #F8F8F8; color: #4D4D4D; font-size: 15px; line-height: 1.5; }
+
+/* Regreso a la guía de la demostración (no formaba parte del sitio original). */
+.volver-guia {
+  position: fixed; left: 16px; bottom: 16px; z-index: 30;
+  padding: 8px 14px; border-radius: 999px; background: var(--indigo); color: #fff;
+  font-weight: 600; font-size: 13px; box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+.volver-guia:hover { background: var(--lima); color: #fff; }
+
+/* ---------- Botones ---------- */
+.boton {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 0 24px;
+  border: 2px solid transparent; border-radius: var(--radio);
+  font: 600 15px/1 var(--fuente);
+  cursor: pointer; text-align: center;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.boton--indigo { background: var(--indigo); color: #fff; }
+.boton--indigo:hover { background: var(--indigo-hover); color: #fff; }
+.boton--lima { background: var(--lima); color: #fff; }
+.boton--lima:hover { background: var(--lima-oscuro); color: #fff; }
+.boton--borde { background: #fff; color: var(--indigo); border-color: var(--indigo); }
+.boton--borde:hover { background: var(--indigo); color: #fff; }
+/* Botón gris por defecto de WooCommerce (cupón, actualizar carrito). */
+.boton--gris { background: #EBE9EB; color: #515151; }
+.boton--gris:hover { background: #DFDCDE; color: #515151; }
+.boton:disabled { opacity: .5; cursor: not-allowed; }
+.enlace { padding: 0; border: 0; background: none; color: var(--indigo); font: inherit; cursor: pointer; }
+.enlace:hover { color: var(--lima-texto); }
+.boton--chico { min-height: 36px; padding: 0 16px; font-size: 14px; }
+.boton--ancho { width: 100%; }
+
+/* ---------- Formularios ---------- */
+.campo { display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; }
+.campo input, .campo select, .campo textarea {
+  min-height: 44px; padding: 0 12px;
+  border: 1px solid #CFCFCF; border-radius: var(--radio);
+  background: #fff; font-weight: 400; font-size: 15px;
+}
+.campo textarea { min-height: 120px; padding: 10px 12px; resize: vertical; }
+.campo .requerido { color: var(--error); }
+
+/* Buscador con botón verde (portal y tiendas) */
+.buscador { display: flex; width: 100%; }
+.buscador input {
+  flex: 1; min-width: 0; min-height: 48px; padding: 0 16px;
+  border: 0; border-radius: var(--radio) 0 0 var(--radio);
+  background: var(--gris-input);
+}
+.buscador button {
+  display: flex; align-items: center; justify-content: center;
+  width: 64px; border: 0; border-radius: 0 var(--radio) var(--radio) 0;
+  background: var(--lima); color: #fff; font-size: 20px; cursor: pointer;
+}
+.buscador button:hover { background: var(--lima-oscuro); }
+
+/* ---------- Barra superior verde ---------- */
+.barra-superior { background: var(--lima); color: #fff; font-weight: 700; font-size: 15px; }
+.barra-superior .contenedor {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 8px 28px; min-height: 48px; padding-top: 6px; padding-bottom: 6px;
+}
+.barra-superior__datos { display: flex; flex-wrap: wrap; gap: 6px 32px; }
+.barra-superior__datos a, .barra-superior__datos span { display: inline-flex; align-items: center; gap: 10px; color: #fff; }
+.barra-superior a:hover { color: var(--indigo); }
+
+.redes { display: flex; align-items: center; gap: 18px; margin: 0; padding: 0; list-style: none; }
+.redes li { display: flex; }
+.redes a { display: inline-flex; align-items: center; justify-content: center; color: inherit; font-size: 18px; }
+
+/* ---------- Encabezado y menú ---------- */
+.encabezado { background: #fff; }
+.encabezado__fila {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding-top: 18px; padding-bottom: 18px;
+}
+.encabezado__logo img { width: auto; height: 96px; }
+.encabezado__buscador { flex: 1; max-width: 640px; }
+.encabezado__abrir-menu {
+  display: none; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border: 0; border-radius: var(--radio);
+  background: none; color: var(--indigo); font-size: 26px; cursor: pointer;
+}
+
+.menu ul { display: flex; flex-wrap: wrap; justify-content: center; margin: 0; padding: 0; list-style: none; }
+.menu a {
+  display: flex; align-items: center; min-height: 52px; padding: 0 34px;
+  color: var(--texto); font-weight: 500; font-size: 16px;
+}
+.menu a:hover { color: var(--indigo); }
+.menu a[aria-current="page"] { background: var(--indigo); color: #fff; }
+.menu--gris { background: var(--gris-menu); }
+
+/* ---------- Tarjetas ---------- */
+.tarjeta {
+  display: flex; flex-direction: column; overflow: hidden;
+  background: #fff; border-radius: var(--radio); box-shadow: var(--sombra-tarjeta);
+  color: var(--indigo); transition: box-shadow .2s;
+}
+.tarjeta:hover { box-shadow: 0 4px 18px rgba(29, 13, 129, .25); color: var(--indigo); }
+.tarjeta__imagen { aspect-ratio: 255 / 168; overflow: hidden; background: #fff; }
+.tarjeta__imagen img { width: 100%; height: 100%; object-fit: cover; }
+.tarjeta__imagen--logo img { object-fit: contain; padding: 16px; }
+.tarjeta__titulo {
+  display: flex; align-items: center; justify-content: center; flex: 1;
+  min-height: 84px; padding: 16px; text-align: center;
+  font-weight: 700; font-size: 16px; line-height: 1.3;
+}
+
+/* Imagen faltante: degradado gris con iniciales (como cuando la captura no carga). */
+.sin-imagen {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, #E6E6E6, #B3B3B3);
+  color: #fff; font-weight: 800; font-size: 40px; letter-spacing: 1px;
+}
+
+.rejilla { display: grid; gap: 30px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.rejilla--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.titulo-seccion { margin-bottom: 30px; text-align: center; color: var(--texto); font-weight: 700; font-size: 32px; }
+.titulo-pagina { margin-bottom: 24px; color: var(--indigo); font-weight: 800; font-size: 36px; }
+.titulo-pagina--centro { text-align: center; }
+.seccion { padding-top: 50px; padding-bottom: 50px; }
+
+/* Páginas de texto: Quiénes somos, Términos, Políticas. */
+.texto { max-width: 860px; }
+.texto p { font-size: 17px; line-height: 1.7; }
+
+/* ---------- Carrusel principal (también se usa en las tiendas) ---------- */
+.carrusel { position: relative; overflow: hidden; background: var(--lima); }
+.carrusel__pista { display: flex; transition: transform .5s ease; }
+/* Portadas de 1920 × 550: se muestran completas, sin recortar, en cualquier ancho. */
+.carrusel__diapositiva { flex: 0 0 100%; display: block; aspect-ratio: 1920 / 550; }
+.carrusel__diapositiva img, .carrusel__diapositiva picture { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.carrusel__flecha {
+  position: absolute; top: 50%; z-index: 2; transform: translateY(-50%);
+  display: flex; align-items: center; justify-content: center;
+  width: 36px; height: 52px; border: 0; background: rgba(51, 51, 51, .85); color: #fff;
+  font-size: 22px; cursor: pointer;
+}
+.carrusel__flecha:hover { background: var(--indigo); }
+.carrusel__flecha--anterior { left: 10px; }
+.carrusel__flecha--siguiente { right: 10px; }
+
+.carrusel__puntos { display: flex; justify-content: center; gap: 8px; padding: 16px 0; background: #fff; }
+.carrusel__puntos button {
+  width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%;
+  background: #CCC; cursor: pointer;
+}
+.carrusel__puntos button[aria-current="true"] { background: var(--indigo); }
+
+/* ---------- Beneficios / botones informativos (ícono + título + subtítulo) ---------- */
+.beneficios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; text-align: center; }
+.beneficio img { width: auto; height: 64px; margin: 0 auto 18px; }
+.beneficio strong { display: block; font-weight: 700; font-size: 17px; }
+.beneficio span { font-size: 17px; }
+
+/* ---------- Banda gris con banner ---------- */
+.banda { background: var(--gris-banda); }
+.banda .contenedor { padding-top: 60px; padding-bottom: 60px; }
+.banda__banner {
+  display: flex; align-items: center; min-height: 240px; padding: 40px 60px;
+  background: var(--lima); color: #fff;
+  font-weight: 800; font-size: clamp(22px, 3vw, 34px); line-height: 1.2;
+}
+
+/* ---------- Logos de instituciones ---------- */
+.instituciones .contenedor {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-evenly; gap: 30px;
+  padding-top: 40px; padding-bottom: 50px;
+}
+.instituciones img { width: auto; height: 100px; }
+
+/* ---------- «Mantente informado» ---------- */
+.boletin { background: var(--lima); color: #fff; }
+.boletin .contenedor {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px;
+  padding-top: 60px; padding-bottom: 60px;
+}
+.boletin h2 { font-weight: 700; font-size: 32px; }
+.boletin p { margin: 6px 0 0; font-weight: 700; font-size: 20px; }
+.boletin form { display: flex; flex: 1; gap: 10px; max-width: 550px; }
+.boletin input {
+  flex: 1; min-width: 0; min-height: 46px; padding: 0 16px;
+  border: 1px solid #CFCFCF; border-radius: var(--radio); background: #fff; color: var(--texto);
+}
+.boletin .boton { min-width: 128px; border-color: #fff; }
+.boletin__aviso { width: 100%; margin: 0; font-weight: 600; }
+
+/* ---------- Pie ---------- */
+.pie { background: linear-gradient(180deg, var(--gris-menu), #fff); font-size: 15px; }
+.pie .contenedor { padding-top: 60px; padding-bottom: 50px; }
+.pie__columnas { display: grid; grid-template-columns: 1fr 1.5fr 1fr; gap: 40px; align-items: start; }
+.pie .redes { margin-top: 18px; }
+.pie__logo img { width: 150px; }
+.pie h2 { margin-bottom: 16px; color: #000; font-weight: 600; font-size: 17px; text-transform: uppercase; }
+.pie ul { margin: 0; padding: 0; list-style: none; }
+.pie li + li { margin-top: 6px; }
+.pie a { color: var(--texto); }
+.pie a:hover { color: var(--indigo); }
+.pie address { font-style: normal; }
+.pie__acceso { margin-top: 18px; font-size: 13px; }
+
+/* Íconos de redes de un solo color (documento «Cambios», punto 7). */
+.pie .redes a {
+  justify-content: center; width: 38px; height: 38px; border-radius: 50%;
+  background: var(--indigo); color: #fff; font-size: 18px;
+}
+.pie .redes a:hover { background: var(--lima); color: #fff; }
+
+.tarjetas-pago { display: flex; gap: 6px; margin-top: 18px; }
+.tarjetas-pago span {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 56px; height: 34px; padding: 0 8px;
+  border: 1px solid var(--borde); border-radius: var(--radio); background: #fff;
+  font: italic 800 14px/1 var(--fuente); color: var(--indigo);
+}
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 1024px) {
+  .rejilla { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+  .menu a { padding: 0 20px; }
+}
+
+@media (max-width: 767px) {
+  .contenedor { padding: 0 16px; }
+  .barra-superior__datos { display: none; }
+  .barra-superior .contenedor { justify-content: center; min-height: 40px; }
+
+  .encabezado__fila { flex-wrap: wrap; gap: 14px; padding-top: 14px; padding-bottom: 14px; }
+  .encabezado__logo img { height: 72px; }
+  .encabezado__abrir-menu { display: inline-flex; }
+  .encabezado__buscador { flex-basis: 100%; max-width: none; order: 3; }
+
+  /* Menú plegable (documento «Versión móvil»). */
+  .menu { display: none; }
+  .menu.esta-abierto { display: block; }
+  .menu ul { flex-direction: column; }
+  .menu a { justify-content: center; min-height: 48px; }
+
+  .rejilla, .rejilla--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .titulo-seccion { font-size: 26px; }
+  .titulo-pagina { font-size: 28px; }
+  .seccion { padding-top: 36px; padding-bottom: 36px; }
+
+  .carrusel__flecha { width: 28px; height: 40px; }
+
+  .beneficios { grid-template-columns: 1fr; gap: 26px; }
+  .instituciones img { height: 64px; }
+  .boletin .contenedor { padding-top: 40px; padding-bottom: 40px; }
+  .boletin h2 { font-size: 26px; }
+  .boletin p { font-size: 17px; }
+  .boletin form { flex-basis: 100%; }
+
+  .pie__columnas { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+  .pie__logo img { margin: 0 auto; }
+  .pie .redes, .tarjetas-pago { justify-content: center; }
+}
+
+@media (max-width: 420px) {
+  .rejilla { grid-template-columns: minmax(0, 1fr); }
+  .boletin form { flex-direction: column; }
+}

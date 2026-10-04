@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es-GT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acceder ‹ La Estación del Emprendedor — WordPress</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<!-- /wp-login.php del sitio principal: por aquí entraba el CME a administrar la red. -->
+<body class="wp">
+<main class="acceso">
+  <a class="acceso__logo" href="portal.html"><img src="assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor" width="422" height="393"></a>
+  <p class="wp-aviso" role="status" data-salio hidden>Has cerrado sesión.</p>
+  <p class="nota-demo">Acceso del CME (administrador de la red). Demostración: presiona «Acceder» para entrar; no hace falta usuario ni contraseña.</p>
+  <form data-acceso>
+    <label for="usuario">Nombre de usuario o dirección de correo electrónico</label>
+    <input class="wp-campo" id="usuario" autocomplete="username">
+    <label for="clave">Contraseña</label>
+    <input class="wp-campo" id="clave" type="password" autocomplete="current-password">
+    <div class="acceso__pie">
+      <label><input type="checkbox"> Recuérdame</label>
+      <button class="wp-boton wp-boton--primario" type="submit">Acceder</button>
+    </div>
+  </form>
+  <div class="acceso__enlaces">
+    <p><a href="index.html">← Volver a la guía de la demostración</a></p>
+    <p><a href="portal.html">← Ir a La Estación del Emprendedor</a></p>
+  </div>
+</main>
+<script>
+(function () {
+  document.querySelector('[data-salio]').hidden = !new URLSearchParams(location.search).get('salio');
+  document.querySelector('[data-acceso]').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    try { localStorage.setItem('estacion-acceso-red', 'true'); } catch (e) { /* sin almacenamiento */ }
+    location.href = 'wp-admin.html';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* ==========================================================================
+   Portal (sitio principal): inicio, directorio, perfil, blog y páginas.
+   Requiere base.css.
+   ========================================================================== */
+
+/* ---------- Carrusel de logos de emprendedores ---------- */
+.logos-emprendedores { padding-top: 24px; padding-bottom: 10px; }
+.logos-emprendedores ul {
+  display: flex; gap: 22px; margin: 0; padding: 8px 4px 18px; list-style: none;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+}
+.logos-emprendedores li { flex: none; scroll-snap-align: start; }
+.logos-emprendedores a {
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  width: 110px; height: 110px; border: 2px solid #EDEDED; border-radius: 50%; background: #fff;
+}
+.logos-emprendedores a:hover { border-color: var(--lima); }
+.logos-emprendedores img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+
+/* ---------- Tarjeta detallada de /emprendimientos/ ---------- */
+.tarjeta__media { position: relative; }
+.tarjeta__logo {
+  position: absolute; left: 14px; bottom: -28px;
+  width: 64px; height: 64px; overflow: hidden;
+  border-radius: 50%; background: #fff; box-shadow: var(--sombra-tarjeta);
+}
+.tarjeta__logo img { width: 100%; height: 100%; object-fit: contain; padding: 6px; }
+.tarjeta__cuerpo { display: flex; flex: 1; flex-direction: column; gap: 12px; padding: 40px 20px 24px; }
+.tarjeta--detalle .tarjeta__titulo { display: block; flex: none; min-height: 0; padding: 0; text-align: left; font-size: 18px; }
+.tarjeta__descripcion { margin: 0; color: var(--texto); font-size: 15px; line-height: 1.6; }
+
+/* ---------- Pestañas por categoría ---------- */
+.pestanas {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 4px;
+  margin: 0 0 34px; padding: 0; list-style: none;
+}
+.pestana {
+  position: relative;
+  display: inline-flex; align-items: center; gap: 10px;
+  min-height: 52px; padding: 0 16px;
+  border: 0; background: none; color: var(--texto);
+  font: 700 16px/1 var(--fuente); cursor: pointer;
+}
+.pestana .icono { color: var(--lima); font-size: 26px; }
+.pestana:hover { color: var(--indigo); }
+.pestana[aria-selected="true"] { background: var(--lima); color: #fff; }
+.pestana[aria-selected="true"] .icono { color: #fff; }
+.pestana[aria-selected="true"]::after {
+  content: ""; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 11px solid transparent; border-top-color: var(--lima); border-bottom: 0;
+}
+
+.directorio__resultado { margin-bottom: 24px; text-align: center; }
+.directorio__vacio { grid-column: 1 / -1; text-align: center; }
+
+/* ---------- Noticias / blog ---------- */
+.entrada {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--borde); border-radius: var(--radio); background: #fff; color: var(--texto);
+}
+.entrada:hover { color: var(--texto); box-shadow: var(--sombra-tarjeta); }
+.entrada__imagen { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: linear-gradient(180deg, #E6E6E6, #B3B3B3); }
+.entrada__imagen img { width: 100%; height: 100%; object-fit: cover; }
+.entrada__imagen::after { content: ""; position: absolute; inset: 0; background: rgba(29, 13, 129, .25); }
+.entrada__cuerpo { display: flex; flex: 1; flex-direction: column; gap: 18px; padding: 20px; }
+.entrada__titulo { font-weight: 700; font-size: 18px; line-height: 1.35; }
+.entrada__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; margin-top: auto; font-size: 13px; color: #7A7A7A; }
+.entrada__meta span { display: inline-flex; align-items: center; gap: 6px; }
+.entrada__meta .entrada__categoria { color: var(--indigo); font-weight: 700; }
+
+.articulo { max-width: 800px; }
+.articulo__cabecera { text-align: center; }
+.articulo__cabecera .titulo-pagina { margin-bottom: 10px; }
+.articulo__meta { margin: 0; color: var(--indigo); font-weight: 600; font-size: 15px; }
+.articulo__imagen { margin: 24px 0; aspect-ratio: 16 / 7; background: linear-gradient(180deg, #E6E6E6, #B3B3B3); }
+
+/* ---------- Perfil del emprendedor ---------- */
+.perfil__portada { height: 340px; background: linear-gradient(180deg, #E6E6E6, #B3B3B3); }
+.perfil__portada img { width: 100%; height: 100%; object-fit: cover; }
+.perfil__contenido {
+  display: flex; flex-direction: column; align-items: center; gap: 18px;
+  max-width: 820px; padding-bottom: 60px; text-align: center;
+}
+.perfil__logo {
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+  width: 170px; height: 170px; margin-top: -85px;
+  border-radius: 50%; background: #fff; box-shadow: var(--sombra-tarjeta);
+  color: var(--indigo); font-weight: 800; font-size: 44px;
+}
+.perfil__logo img { width: 100%; height: 100%; object-fit: contain; padding: 14px; }
+.perfil__nombre { color: #333; font-weight: 600; font-size: 40px; }
+.perfil__categorias { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.perfil__categorias a {
+  display: inline-flex; padding: 4px 12px; border-radius: 999px;
+  background: #EEF8D6; color: #3F5C00; font-weight: 700; font-size: 13px;
+}
+.perfil__descripcion { margin: 0; font-size: 18px; }
+.perfil__sin-tienda { margin: 0; color: #7A7A7A; font-size: 15px; }
+.articulo__cuerpo { margin-bottom: 24px; }
+.articulo__cuerpo h2 { margin: 26px 0 12px; color: var(--texto); font-size: 24px; }
+.articulo__autor { font-weight: 700; }
+
+.perfil__visitar { min-height: 50px; padding: 0 34px; text-transform: uppercase; letter-spacing: .04em; }
+
+/* ---------- Páginas de texto ---------- */
+.texto .destacado { color: var(--indigo); font-weight: 800; font-size: 22px; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 767px) {
+  .pestana { min-height: 46px; padding: 0 14px; font-size: 14px; }
+  .pestana .icono { font-size: 22px; }
+
+  .banda__banner { padding: 30px 24px; min-height: 160px; }
+
+  .perfil__portada { height: 200px; }
+  .perfil__logo { width: 130px; height: 130px; margin-top: -65px; font-size: 34px; }
+  .perfil__nombre { font-size: 30px; }
+}

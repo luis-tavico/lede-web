@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es-GT" data-raiz="../">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Finalizar compra – Tienda</title>
+<meta name="description" content="Tienda en La Estación del Emprendedor.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/tienda.css">
+</head>
+<body data-pagina="finalizar">
+<a class="salto" href="#contenido">Saltar al contenido</a>
+
+<div class="barra-superior">
+  <div class="contenedor">
+    <div class="barra-superior__datos">
+      <span><span data-icono="telefono"></span><span data-tienda-telefono></span></span>
+      <span><span data-icono="correo"></span><span data-tienda-correo></span></span>
+    </div>
+    <ul class="redes" aria-label="Redes sociales de la tienda">
+      <li hidden><a data-red="facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><span data-icono="facebook"></span></a></li>
+      <li hidden><a data-red="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+      <li hidden><a data-red="web" href="#" aria-label="Sitio web" target="_blank" rel="noopener"><span data-icono="web"></span></a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="encabezado encabezado-tienda">
+  <div class="contenedor">
+    <a class="encabezado-tienda__logo" data-tienda="index.html" href="index.html" data-tienda-logo></a>
+    <form class="buscador" action="tienda.html" role="search">
+      <input type="hidden" name="t">
+      <label class="solo-lectores" for="buscar">Busca un producto</label>
+      <input id="buscar" name="q" type="search" placeholder="Busca un producto">
+      <button type="submit" aria-label="Buscar"><span data-icono="buscar"></span></button>
+    </form>
+    <a class="minicarrito" data-tienda="carrito.html" href="carrito.html">
+      <span data-minicarrito-total>Q0.00</span><span data-icono="carrito"></span>
+      <span class="minicarrito__cantidad" data-minicarrito-cantidad></span>
+      <span class="solo-lectores">Ver carrito</span>
+    </a>
+    <button class="encabezado__abrir-menu" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Menú"><span data-icono="menu"></span></button>
+    <nav class="menu" id="menu-principal" aria-label="Menú de la tienda">
+      <ul>
+        <li><a data-tienda="index.html" href="index.html">Inicio</a></li>
+        <li><a data-tienda="tienda.html" href="tienda.html">Tienda</a></li>
+        <li><a data-tienda="quienes-somos.html" href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a data-tienda="contacto.html" href="contacto.html">Contacto</a></li>
+        <li><a data-tienda="mi-cuenta.html" href="mi-cuenta.html">Mi Cuenta</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <section class="contenedor seccion" data-render="finalizar">
+    <h1 class="titulo-pagina">Finalizar compra</h1>
+    <p class="aviso aviso--info">¿Ya eres cliente? <a data-tienda="mi-cuenta.html" href="mi-cuenta.html">Haz clic aquí para acceder</a></p>
+    <form class="checkout">
+      <div>
+        <h2>Detalles de facturación</h2>
+        <div class="checkout__campos">
+          <label class="campo"><span>Nombre <span class="requerido">*</span></span><input name="nombre" autocomplete="given-name" required></label>
+          <label class="campo"><span>Apellidos <span class="requerido">*</span></span><input name="apellidos" autocomplete="family-name" required></label>
+          <label class="campo ancho-completo"><span>NIT (o CF)</span><input name="nit" placeholder="CF"></label>
+          <label class="campo ancho-completo"><span>Dirección de la calle <span class="requerido">*</span></span><input name="direccion" autocomplete="address-line1" placeholder="Número de la casa y nombre de la calle" required></label>
+          <label class="campo ancho-completo"><span class="solo-lectores">Dirección, línea 2</span><input name="direccion2" autocomplete="address-line2" placeholder="Colonia, Apartamento, habitación, etc. (opcional)"></label>
+          <!-- Estado, Municipio y Código postal deciden la zona de envío (documento «Configuración de Envíos»). -->
+          <label class="campo"><span>Estado <span class="requerido">*</span></span><select name="estado" autocomplete="address-level1" required></select></label>
+          <div class="campo"><span>Municipio <span class="requerido">*</span></span><div data-municipio></div></div>
+          <!-- Requerido por CyberSource para aprobar el pago (documento «Q&A emprendedores»). -->
+          <label class="campo"><span>Código postal <span class="requerido">*</span></span><input name="postal" autocomplete="postal-code" inputmode="numeric" placeholder="01001" required></label>
+          <label class="campo"><span>Teléfono <span class="requerido">*</span></span><input name="telefono" type="tel" autocomplete="tel" required></label>
+          <label class="campo ancho-completo"><span>Dirección de correo electrónico <span class="requerido">*</span></span><input name="correo" type="email" autocomplete="email" required></label>
+          <label class="campo ancho-completo"><span>Notas del pedido (opcional)</span><textarea name="notas" placeholder="Notas sobre tu pedido, por ejemplo, indicaciones para la entrega."></textarea></label>
+        </div>
+      </div>
+      <div class="resumen">
+        <h2>Tu pedido</h2>
+        <table data-resumen></table>
+        <!-- Métodos de pago activados en WooCommerce › Ajustes › Pagos del panel. -->
+        <ul class="pagos" data-pagos></ul>
+        <p class="aviso aviso--error" data-error role="alert" hidden></p>
+        <label class="casilla"><input type="checkbox" required><span>He leído y estoy de acuerdo con los <a href="../terminos-y-condiciones.html" target="_blank">términos y condiciones</a> <span class="requerido">*</span></span></label>
+        <button class="boton boton--lima boton--ancho" type="submit">Realizar el pedido</button>
+      </div>
+    </form>
+  </section>
+</main>
+
+<section class="boletin" aria-labelledby="boletin-titulo">
+  <div class="contenedor">
+    <div>
+      <h2 id="boletin-titulo">Mantente informado</h2>
+      <p>Recibe todas nuestras noticias</p>
+    </div>
+    <form>
+      <label class="solo-lectores" for="boletin-correo">Correo electrónico</label>
+      <input id="boletin-correo" type="email" placeholder="Email" autocomplete="email" required>
+      <button class="boton boton--indigo" type="submit">Enviar</button>
+    </form>
+    <p class="boletin__aviso" role="status" hidden>¡Gracias! Suscripción registrada (demostración: no se guarda ningún dato).</p>
+  </div>
+</section>
+
+<footer class="pie">
+  <div class="contenedor pie__columnas">
+    <a class="pie__logo" href="../portal.html"><img src="../assets/logos/estacion-vertical.png" alt="La Estación del Emprendedor" width="422" height="393" loading="lazy"></a>
+    <nav aria-labelledby="pie-tienda">
+      <h2 id="pie-tienda" data-tienda-nombre>Tienda</h2>
+      <ul>
+        <li><a data-tienda="quienes-somos.html" href="quienes-somos.html">Quiénes Somos</a></li>
+        <li><a data-tienda="contacto.html" href="contacto.html">Contacto</a></li>
+        <li><a data-tienda="politicas-de-envio-y-devoluciones.html" href="politicas-de-envio-y-devoluciones.html">Envíos y Devoluciones</a></li>
+        <li><a href="../terminos-y-condiciones.html">Términos y Condiciones</a></li>
+      </ul>
+    </nav>
+    <div>
+      <h2>Ayuda</h2>
+      <ul class="redes" aria-label="Redes sociales de la tienda">
+        <li hidden><a data-red="facebook" href="#" aria-label="Facebook" target="_blank" rel="noopener"><span data-icono="facebook"></span></a></li>
+        <li hidden><a data-red="instagram" href="#" aria-label="Instagram" target="_blank" rel="noopener"><span data-icono="instagram"></span></a></li>
+        <li hidden><a data-red="web" href="#" aria-label="Sitio web" target="_blank" rel="noopener"><span data-icono="web"></span></a></li>
+      </ul>
+      <div class="tarjetas-pago" aria-label="Tarjetas aceptadas"><span>VISA</span><span>Mastercard</span></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/datos.js"></script>
+<script src="../js/iconos.js"></script>
+<script src="../js/comun.js"></script>
+<script src="../js/tienda-estado.js"></script>
+<script src="../js/tienda.js"></script>
+</body>
+</html>
