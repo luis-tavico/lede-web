@@ -273,3 +273,54 @@ body.wp {
   .campo-woo .ayuda { grid-column: 1; }
   .form-table th, .form-table td { display: block; width: auto; padding: 8px 0; }
 }
+
+/* ---------- Celular (como WordPress por debajo de 782 px) ---------- */
+.barra-admin { white-space: nowrap; }
+@media (max-width: 782px) {
+  /* Barra superior: solo íconos a la izquierda; a la derecha, la guía y «Salir». */
+  .barra-admin { height: 46px; padding: 0 4px; gap: 4px; }
+  .barra-admin a, .barra-admin button { height: 46px; padding: 0 9px; }
+  .barra-admin ul:first-child a { font-size: 0; gap: 0; }
+  .barra-admin ul:first-child svg { width: 22px; height: 22px; }
+  .barra-admin ul:last-child span { display: none; }
+  .barra-admin ul:last-child li:first-child a { font-size: 0; }
+  .barra-admin ul:last-child li:first-child a::before { content: "← Guía"; font-size: 13px; }
+  .wp-marco { min-height: calc(100vh - 46px); }
+
+  .wp-contenido { padding: 14px 12px 50px; }
+  .woo-cabecera { min-height: 46px; padding: 8px 12px; }
+  .woo-cabecera__accesos { display: none; }
+  .wp h1 { font-size: 21px; }
+  .wp-pestanas a { padding: 6px 9px; font-size: 13px; }
+  .wp-herramientas form { display: flex; gap: 6px; width: 100%; }
+  .wp-herramientas form .wp-campo { flex: 1; min-width: 0; }
+
+  /* Campos: nunca más anchos que la pantalla (algunos traen ancho fijo). */
+  .wp-contenido .wp-campo, .wp-contenido .wp-area, .wp-contenido .wp-select { max-width: 100%; min-height: 40px; font-size: 16px; }
+  .wp-contenido .limites .wp-campo { min-height: 34px; }
+  .form-table, .form-table > tbody, .form-table > tbody > tr { display: block; }
+  .form-table th, .form-table td { display: block; width: auto; padding: 6px 0; }
+  .form-table > tbody > tr { margin-bottom: 10px; }
+
+  /* Tablas apiladas: una ficha por fila, con el título de cada columna. */
+  .wp-tabla, .wp-tabla > tbody, .wp-tabla > tfoot, .wp-tabla > tbody > tr, .wp-tabla > tfoot > tr { display: block; }
+  .wp-tabla > thead { display: none; }
+  .wp-tabla > tbody > tr { padding: 10px 12px; border-bottom: 1px solid #dcdcde; }
+  .wp-tabla > tbody > tr::after { content: ""; display: block; clear: both; }
+  .wp-tabla > tbody > tr > td, .wp-tabla > tfoot > tr > td { display: block; width: auto; padding: 3px 0; }
+  .wp-tabla > tbody > tr > td[data-titulo] { clear: both; }
+  .wp-tabla > tbody > tr > td[data-titulo]::before { content: attr(data-titulo) ": "; font-weight: 600; color: #50575e; }
+  .wp-tabla > tbody > tr > td.wp-tabla__imagen { float: left; margin: 0 10px 4px 0; }
+  .wp-tabla > tbody > tr > td.wp-tabla__nombre::before { content: none; }
+  .wp-tabla > tbody > tr > td.wp-tabla__nombre { clear: none; font-size: 14px; }
+  .wp-tabla > tfoot > tr { padding: 10px 12px; }
+  .wp-tabla .wp-campo { width: 100%; }
+  .wp-acciones { visibility: visible; line-height: 1.9; }
+
+  .estado-woo { grid-template-columns: 1fr; }
+  .estado-woo li:nth-child(odd) { border-right: 0; }
+  .pasos li { flex-wrap: wrap; }
+  .zona-regiones { max-height: 220px; }
+  .acf-imagen--icono { width: 100%; }
+  .wp-caja__pie { flex-wrap: wrap; }
+}
